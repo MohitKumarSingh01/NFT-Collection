@@ -1,40 +1,40 @@
 // Step 1: Initialize an empty array for storing NFTs
-let nonFungibleTokens = [];
+let NFTsCollection = [];
 
 // Step 2: Define the function to mint a new NFT
-function createToken(name, description, owner) {
-    const newToken = {
-        name,
-        description,
-        owner
+function mintNFT(title, artist, year) {
+    const newNFT = {
+        title,
+        artist,
+        year
     };
-    nonFungibleTokens.push(newToken);
+    NFTsCollection.push(newNFT);
 }
 
 // Step 3: Define the function to display all existing NFTs
-function displayTokens() {
-    nonFungibleTokens.forEach((token, index) => {
-        console.log(`Token ${index + 1}:`);
-        console.log(`Name: ${token.name}`);
-        console.log(`Description: ${token.description}`);
-        console.log(`Owner: ${token.owner}`);
+function displayNFTs() {
+    NFTsCollection.forEach((NFT, index) => {
+        console.log(`NFT ${index + 1}:`);
+        console.log(`Title: ${NFT.title}`);
+        console.log(`Artist: ${NFT.artist}`);
+        console.log(`Year: ${NFT.year}`);
         console.log('---');
     });
 }
 
 // Step 4: Define the function to get the total supply of NFTs
-function totalSupply() {
-    return nonFungibleTokens.length;
+function getTotalNFTSupply() {
+    return NFTsCollection.length;
 }
 
 // Mint a few NFTs
-createToken('First Token', 'This is the first token description.', 'Mohit');
-createToken('Second Token', 'This is the second token description.', 'Manjeet');
-createToken('Third Token', 'This is the third token description.', 'Deepu');
+mintNFT('Mahalaxmi', 'Raja Ravi Varma', 1895);
+mintNFT('Bharat Mata', 'Abanindranath Tagore', 1905);
+mintNFT('Ganesha', 'M.F. Husain', 1970);
 
 // Display all NFTs
 console.log('All Existing NFTs:');
-displayTokens();
+displayNFTs();
 
 // Print the total number of NFTs minted to the console
-console.log(`Total Supply: ${totalSupply()}`);
+console.log(`Total NFT Supply: ${getTotalNFTSupply()}`);
